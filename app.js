@@ -41,7 +41,14 @@ const date = futureDate.getDate();
 const weekday = weekdays[futureDate.getDay()];
 // console.log(weekday);
 
+giveaway.textContent = `Giveaway ends on ${weekday}, ${date} ${month} ${year} at ${hrs}:${mins}`;
 
-giveaway.textContent = `Giveaway ends on ${weekday}, ${date} ${month} ${year} at ${hrs}:${mins}:${secs}`;
+const futureTime = futureDate.getTime();
+// console.log(futureTime);
 
-// Giveaway ends on Sunday, 1 November 2020 at 17:00:00!
+function getRemainingTime() {
+  const today = new Date().getTime();
+  // console.log(today);
+}
+
+getRemainingTime();
