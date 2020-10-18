@@ -31,8 +31,8 @@ let tempYear = tempDate.getFullYear();
 let tempMonth = tempDate.getMonth();
 let tempDay = tempDate.getDate();
 
-// let futureDate = new Date(2020, 10, 1, 17, 0, 0);
-const futureDate = new Date(tempYear, tempMonth, tempDay + 10, 17, 0, 0);
+// let futureDate = new Date(2020, 10, 1, 17, 59, 99);
+const futureDate = new Date(tempYear, tempMonth, tempDay + 10, 16, 59, 00);
 // console.log(futureDate);
 
 const year = futureDate.getFullYear();
@@ -47,7 +47,7 @@ const date = futureDate.getDate();
 const weekday = weekdays[futureDate.getDay()];
 // console.log(weekday);
 
-giveaway.textContent = `Giveaway ends on ${weekday}, ${date} ${month} ${year} at ${hrs}:${mins}`;
+giveaway.textContent = `Giveaway ends on ${weekday}, ${date} ${month} ${year} at ${hrs}:${mins}!`;
 
 const futureTime = futureDate.getTime();
 // console.log(futureTime);
