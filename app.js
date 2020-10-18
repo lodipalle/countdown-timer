@@ -59,13 +59,28 @@ function getRemainingTime() {
 
   const oneDay = 24*60*60*1000;
   // console.log(oneDay);
-  const oneHour = 60*60*1000;
+  const oneHr = 60*60*1000;
   const oneMin = 60*1000;
   let days = t / oneDay;
   // console.log(days);
   days = Math.floor(days);
-  let hrs = Math.floor((t % oneDay) / oneHour);
-  console.log(hrs);
+  let hrs = Math.floor((t % oneDay) / oneHr);
+  // console.log(hrs);
+  let mins = Math.floor((t % oneHr) / oneMin);
+  let secs = Math.floor((t % oneMin) / 1000);
+
+  const values = [days, hrs, mins, secs];
+
+  function format(item) {
+    if (item < 10) {
+      return item = `0${item}`
+    }
+    return item
+  }
+
+  items.forEach(function(item, index){
+    item.innerHTML = format(values[index]);
+  });
 }
 
 getRemainingTime();
