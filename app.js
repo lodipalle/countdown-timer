@@ -26,7 +26,13 @@ const giveaway = document.querySelector(".giveaway");
 const deadline = document.querySelector(".deadline");
 const items = document.querySelectorAll(".deadline-format h4");
 
-let futureDate = new Date(2020, 10, 1, 17, 0, 0);
+let tempDate = new Date ();
+let tempYear = tempDate.getFullYear();
+let tempMonth = tempDate.getMonth();
+let tempDay = tempDate.getDate();
+
+// let futureDate = new Date(2020, 10, 1, 17, 0, 0);
+const futureDate = new Date(tempYear, tempMonth, tempDay + 10, 17, 0, 0);
 // console.log(futureDate);
 
 const year = futureDate.getFullYear();
@@ -80,6 +86,11 @@ function getRemainingTime() {
   items.forEach(function(item, index){
     item.innerHTML = format(values[index]);
   });
+  if (t < 0 ) {
+    clearInterval(countdown);
+    deadline.innerHTML = `<h4 class="expired">Sorry, this giveaway
+    is no longer available!</h4>`
+  }
 }
 
 // countdown timer
