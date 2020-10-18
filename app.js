@@ -50,7 +50,7 @@ function getRemainingTime() {
   const today = new Date().getTime();
   // console.log(today);
   const t = futureTime - today;
-  console.log(t);
+  // console.log(t);
 
   // 1 s = 1000 ms
   // 1 m = 60 s
@@ -68,14 +68,13 @@ function getRemainingTime() {
   // console.log(hrs);
   let mins = Math.floor((t % oneHr) / oneMin);
   let secs = Math.floor((t % oneMin) / 1000);
-
   const values = [days, hrs, mins, secs];
 
   function format(item) {
     if (item < 10) {
-      return item = `0${item}`
+      return item = `0${item}`;
     }
-    return item
+    return item;
   }
 
   items.forEach(function(item, index){
@@ -83,4 +82,6 @@ function getRemainingTime() {
   });
 }
 
+// countdown timer
+let countdown = setInterval(getRemainingTime, 1000);
 getRemainingTime();
